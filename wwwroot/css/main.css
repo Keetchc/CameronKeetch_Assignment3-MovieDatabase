@@ -1,0 +1,151 @@
+﻿body {
+    font-size: 1.25rem;
+    color: #434343ff;
+    background-color: #EFEFEF;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-x: hidden;
+    line-height: 1.25;
+    
+}
+
+h1 {
+    align-items: center;
+    text-align: center;
+}
+
+main {
+    max-width: 80rem;
+    align-self: center;
+    align-items: center;
+    margin: 0 1rem;
+}
+
+nav ul a {
+    color: #EFEFEF;
+    text-decoration: none;
+    background: #751d2d;
+    display: block;
+    border-bottom: solid 4px transparent;
+    margin: 1rem;
+    margin-top: .5rem;
+    padding: 1rem 1.5rem;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    Padding: .5rem 1rem;
+    justify-content: center;
+    background: #751d2d;
+}
+
+nav ul a {
+    opacity: .75;
+    font-size: 1.2rem;
+}
+
+nav ul a.active:hover {
+    color: #EFEFEF;
+    border-bottom: solid 4px #434343ff;
+    opacity: 1;
+}
+
+nav ul a.inactive {
+    color: #efefef;
+    opacity: .3;
+}
+
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    color: #434343ff;
+}
+
+footer.text-wrapper {
+    margin: 0;
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border: 3px solid #751d2d;
+}
+
+thead th:nth-child(1) {
+    width: 30%;
+}
+
+thead th:nth-child(2) {
+    width: 30%;
+}
+
+thead th:nth-child(3) {
+    width: 15%;
+}
+
+thead th:nth-child(4) {
+    width: 25%;
+}
+
+thead th:nth-child(5) {
+    width: 25%;
+}
+
+thead th:nth-child(6) {
+    width: 20%;
+}
+
+thead th:nth-child(7) {
+    width: 20%;
+}
+
+thead th:nth-child(8) {
+    width: 20%;
+}
+
+
+
+th, td {
+    padding: 20px;
+}
+
+button {
+    display: inline-block;
+    padding: 1rem 1rem;
+    margin: 1rem;
+    text-decoration: none;
+    letter-spacing: .5px;
+    transition: 100ms;
+    color: #fff;
+    background-color: #C6322B;
+    border-radius: 35px;
+}
+
+button:hover {
+    color: black;
+    background-color: #e4686a;
+    box-shadow: 0 0 9px;
+    cursor: pointer;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: .4rem;
+    align-items: center;
+}
+
+label {
+    margin-top: 1rem;
+    margin-right: 1rem;
+}
