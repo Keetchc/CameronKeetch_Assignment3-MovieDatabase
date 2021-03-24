@@ -6,60 +6,65 @@
     ViewBag.Header = "New Movie Form";
 }
 
+@*Brings in the model*@
 @model CameronKeetch_Assignment3.Models.MovieResponse;
 
-<form asp-action="MovieForm" method="post">
-    <div>
-        <label asp-for="Category">Category:</label>
-        <input asp-for="Category"/>
-    </div>
 
-    <div>
-        <label asp-for="Title">Title:</label>
-        <input asp-for="Title" />
-    </div>
+@*Creating a form to allow users to enter new movies*@
+<div style="max-width:40rem;" class="m-auto">
+    <form asp-action="MovieForm" method="post" class="text-center">
+        <div class="form-group">
+            <label asp-for="Category">Category:</label>
+            <input class="form-control" asp-for="Category" />
+        </div>
 
-    <div>
-        <label asp-for="Year">Year:</label>
-        <input asp-for="Year" />
-    </div>
+        <div class="form-group">
+            <label asp-for="Title">Title:</label>
+            <input class="form-control" asp-for="Title" />
+        </div>
 
-    <div>
-        <label asp-for="Director">Director:</label>
-        <input asp-for="Director" />
-    </div>
+        <div class="form-group">
+            <label asp-for="Year">Year:</label>
+            <input class="form-control" asp-for="Year" />
+        </div>
 
-    <div>
-        <label asp-for="Rating">Rating:</label>
-        <select asp-for="Rating">
-            <option value="">Select One</option>
-            <option value="G">G</option>
-            <option value="PG">PG</option>
-            <option value="PG-13">PG-13</option>
-            <option value="R">R</option>
-        </select>
-    </div>
+        <div class="form-group">
+            <label asp-for="Director">Director:</label>
+            <input class="form-control" asp-for="Director" />
+        </div>
 
-    <div>
-        <label asp-for="Edited">Edited:</label>
-        <select asp-for="Edited">
-            <option value="">Select One</option>
-            <option value="true">Yes</option>
-            <option value="false">No</option>
-        </select>
-    </div>
+        <div class="form-group">
+            <label asp-for="Rating">Rating:</label>
+            <select class="form-control" asp-for="Rating">
+                <option selected value="">Select One</option>
+                <option value="G">G</option>
+                <option value="PG">PG</option>
+                <option value="PG-13">PG-13</option>
+                <option value="R">R</option>
+            </select>
+        </div>
 
-    <div>
-        <label asp-for="LentTo">Lent To:</label>
-        <input asp-for="LentTo"/>
-    </div>
+        <div class="form-group">
+            <label asp-for="Edited">Edited:</label>
+            <select class="form-control" asp-for="Edited">
+                <option selected value="">Select One</option>
+                <option value="true">True</option>
+                <option value="false">False</option>
+            </select>
+        </div>
 
-    <div>
-        <label asp-for="Note">Notes:</label>
-        <input asp-for="Note" />
-    </div>
+        <div class="form-group">
+            <label asp-for="LentTo">Lent To:</label>
+            <input class="form-control" asp-for="LentTo" />
+        </div>
 
-    <button type="submit">Add Movie</button>
-    <div asp-validation-summary="All"></div>
+        <div>
+            <label asp-for="Note">Notes:</label>
+            <input class="form-control" asp-for="Note" />
+        </div>
 
-</form>
+        <button class="btn btn-info m-2" type="submit">Add Movie</button>
+        <div asp-validation-summary="All"></div>
+
+    </form>
+</div>

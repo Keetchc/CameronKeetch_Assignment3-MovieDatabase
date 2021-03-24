@@ -1,0 +1,74 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<!--This is the Edit view. The view will allow the user to edit movies.-->
+<!--Pull in the MovieResponse model-->
+@model MovieResponse
+
+<p>Edit Movie Information Here</p>
+<br />
+<br />
+
+<!--Form for user to fill out information, info will already be passed in, but can be changed and edited.-->
+<div style="max-width:40rem;" class="m-auto">
+    <form method="post" asp-action="Edit" class="text-center">
+        <div class="form-group">
+            <input class="form-control" type="hidden" name="MovieId" asp-for="MovieId" value="@ViewBag.Movie.MovieId" />
+            <label asp-for="Title">Title:</label>
+            <input class="form-control" type="text" asp-for="Title" value="@ViewBag.Movie.Title" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Category">Category:</label>
+            <input class="form-control" asp-for="Category" type="text" value="@ViewBag.Movie.Category" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Director">Director:</label>
+            <input class="form-control" asp-for="Director" type="text" value="@ViewBag.Movie.Director" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Year">Year:</label>
+            <input class="form-control" asp-for="Year" type="number" value="@ViewBag.Movie.Year" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Rating">Rating:</label>
+            <select class="form-control" asp-for="Rating">
+                <option value="@ViewBag.Movie.Rating">@ViewBag.Movie.Rating</option>
+                <option value="G">G</option>
+                <option value="PG">PG</option>
+                <option value="PG-13">PG-13</option>
+                <option value="R">R</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Edited">Edited:</label>
+            <select class="form-control" asp-for="Rating">
+                <option value="@ViewBag.Movie.Edited">@ViewBag.Movie.Edited</option>
+                <option value="true">True</option>
+                <option value="false">False</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="LentTo">LentTo:</label>
+            <input class="form-control" asp-for="LentTo" type="text" value="@ViewBag.Movie.LentTo" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Note">Note:</label>
+            <input class="form-control" asp-for="Note" type="text" value="@ViewBag.Movie.Note" />
+        </div>
+
+                                    
+        <button class="btn btn-info m-2" type="submit">Save Changes</button>
+        <!--Passes information to the database-->
+        <div asp-validation-summary="All"></div>
+</form>
+</div>

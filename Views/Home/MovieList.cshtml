@@ -5,58 +5,81 @@
     ViewBag.Title = "Movie List";
     ViewBag.Header = "Movie List";
 }
+@*Passes in the model and allows it to be enumerated*@
+@model IEnumerable<MovieResponse>;
 
-@model IEnumerable<CameronKeetch_Assignment3.Models.MovieResponse>;
-
+@*A basic table displaying the information and what can be done with it.*@
 <div>
     <h3>Joel Hilton's Movie Collection:</h3>
-    <table>
+    <table class="table table-striped">
         <thead>
             <tr>
-                <th>Category</th>
+                <th scope="col">Category</th>
             
             
-                <th>Title</th>
+                <th scope="col">Title</th>
             
             
-                <th>Year</th>
+                <th scope="col">Year</th>
             
             
-                <th>Director</th>
+                <th scope="col">Director</th>
             
             
-                <th>Rating</th>
+                <th scope="col">Rating</th>
             
            
-                <th>Edited</th>
+                <th scope="col">Edited</th>
             
             
-                <th>Lent To</th>
+                <th scope="col">Lent To</th>
             
             
-                <th>Notes</th>
+                <th scope="col">Notes</th>
+
+                <th scope="col">Edit</th>
+
+                <th scope="col">Delete</th>
             </tr>
         </thead>
         <tbody>
-            @foreach(CameronKeetch_Assignment3.Models.MovieResponse movie in Model)
+            @*A foreach loop that will display all movies in the database*@
+            @foreach(var x in Model)
             {
-                if (movie.Title == "Independence Day")
+                if (x.Title == "Independence Day")
                 {
                     //this does nothing, just excludes Independence Day from showing in the Movie List.
                 }
 
                 else
                 {
-                <tr>
-                    <td>@movie.Category</td>
-                    <td>@movie.Title</td>
-                    <td>@movie.Year</td>
-                    <td>@movie.Director</td>
-                    <td>@movie.Rating</td>
-                    <td>@movie.Edited</td>
-                    <td>@movie.LentTo</td>
-                    <td>@movie.Note</td>
-                </tr>
+            <tr>
+                <td>@x.Category</td>
+                <td>@x.Title</td>
+                <td>@x.Year</td>
+                <td>@x.Director</td>
+                <td>@x.Rating</td>
+                <td>@x.Edited</td>
+                <td>@x.LentTo</td>
+                <td>@x.Note</td>
+                <td>
+                    @*The Edit button, takes you to the controller and the HttpPost for the MovieList*@
+                    <form method="post" class="text-right">
+                        <input type="hidden" name="MovieId" value="@x.MovieId" />
+                        <button type="submit" asp-action="MovieList" class="btn-success btn-small">Edit Movie</button>
+                    </form>
+                </td>
+                <td>
+                    @*The Delete button, deletes straight from this page and takes you to the DeleteConfirmation page*@
+                    <form method="post">
+                        <input type="hidden" name="MovieId" value="@x.MovieId" />
+                        <button type="submit" asp-action="Delete" class="btn-danger btn-small">Delete Movie</button>
+                    </form>
+                </td>
+                    
+               
+                    
+            </tr>
                 }
 
             

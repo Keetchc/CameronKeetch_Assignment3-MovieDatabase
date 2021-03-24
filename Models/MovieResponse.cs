@@ -9,6 +9,11 @@ namespace CameronKeetch_Assignment3.Models
 {
     public class MovieResponse
     {
+        //primary key
+        [Key]
+        [Required]
+        public int MovieId { get; set; }
+
         [Required]
         public string Category { get; set; }
 

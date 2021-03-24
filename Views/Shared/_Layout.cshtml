@@ -5,30 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewBag.Title</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/main.css" />
+    
     <link rel="shortcut icon" href="~/favicon.ico" />
 </head>
-<body>
+<body style="overflow-x:hidden">
         <header>
-            <nav>
-                <ul>
-                    <a asp-action="Index">Home</a>
-                    <a asp-action="MyPodcasts">My Podcasts</a>
-                    <a asp-action="MovieForm">New Movie Form</a>
-                    <a asp-action="MovieList">Movie List</a>
-                </ul>
+            <nav class="p-4 navbar navbar-expand-lg navbar-light bg-info text-white">
+                <a class="navbar-brand" href="#">JH Movie Database</a>
+                    <div class="navbar-nav">
+                        <a class="nav-item active nav-link text-white" asp-action="Index">Home</a>
+                        <a class="nav-item active nav-link text-white" asp-action="MyPodcasts">My Podcasts</a>
+                        <a class="nav-item active nav-link text-white" asp-action="MovieForm">New Movie Form</a>
+                        <a class="nav-item active nav-link text-white" asp-action="MovieList">Movie List</a>
+                    </div>
             </nav>
-            <h1>@ViewBag.Title</h1>
         </header>
+    <br />
+    <br />
+ 
 
-        <main>
+        <main class="text-center m-auto" style="max-width: 80rem;">
+            <h1>@ViewBag.Title</h1>
             @RenderBody()
         </main>
 
         <br />
         <br />
+    <br />
+    <br />
 
-        <footer>The Joel Hilton Film Collection, Copyright 2021</footer>
+        <footer class="text-center footer text-dark p-4">The Joel Hilton Film Collection, Copyright 2021</footer>
    
 </body>
 </html>
